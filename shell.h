@@ -8,9 +8,11 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
-typedef struct name
+/*typedef struct name
 {
-    /* data */
-}; name
-
+    /* data 
+}; name */
+char *_strtok(char *str, char *deli);
+char *_strchr(char *string, char b);
+unsigned int _strcspn(char *s, char *accept);
 #endif /* SHELL_H_ */
