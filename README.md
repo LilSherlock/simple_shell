@@ -13,9 +13,9 @@ Standard functions and system calls employed in simple_shell include:
 At this time, there are no known bugs.
 
 ## Authors
-Alexa Orrico | [GitHub](https://github.com/alexaorrico) | [Twitter](https://twitter.com/alexa_orrico)
+Santiago Castillo | [GitHub](https://github.com/Sainterman)
 
-John Cottrell | [GitHub](https://github.com/johncottrell) | [Twitter](https://twitter.com/johnpeterco)
+Takeshi Camilo| [GitHub](https://github.com/LilSherlock)
 
 ## License
 simple_shell is open source and therefore free to download and use without permission.
