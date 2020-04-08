@@ -7,12 +7,12 @@
 #include <string.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <limits.h>
+#define BUFFER_SIZE 1024
 
-/*typedef struct name
-{
-    /* data 
-}; name */
+char **tokenizer(char *buffer);
 char *_strtok(char *str, char *deli);
 char *_strchr(char *string, char b);
 unsigned int _strcspn(char *s, char *accept);
+
 #endif /* SHELL_H_ */
