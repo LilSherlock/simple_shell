@@ -10,6 +10,8 @@
 #include <limits.h>
 #define BUFFER_SIZE 1024
 
+char *readline(void);
+void hshloop(void);
 char **tokenizer(char *buffer);
 char *_strtok(char *str, char *deli);
 char *_strchr(char *string, char b);
