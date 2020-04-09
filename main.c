@@ -6,7 +6,7 @@
 
 
 /* add functionality to main args */
-int main(int ac, char *av[], char *env[])
+int main(__attribute__((unused)) int ac, char *av[], char *env[])
 {
 	int status = 0;
 	if(isatty(STDIN_FILENO) == 1)

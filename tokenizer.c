@@ -4,7 +4,7 @@ char** tokenizer(char *buffer)
 {
 	char *tokens[4096], *clone, **tokAddress;
 	size_t words = 0;
-
+	clone = strtok(buffer, " ");
 	for (; clone != NULL; clone = strtok(NULL, " "))
 	{
 		clone = strtok(NULL, " ");

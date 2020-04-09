@@ -1,4 +1,4 @@
-int noninteractive(char *av[], char *env[])
+int noninteractive(__attribute__((unused))char *av[], __attribute__((unused)) char *env[])
 {
-	
+	return (0);
 }

@@ -2,7 +2,8 @@
 char *readline(void)
 {
 	char *buffer;
-	ssize_t bytes = 0, n = BUFFER_SIZE;
+	ssize_t bytes = 0;
+	size_t n = BUFFER_SIZE;
 	buffer = malloc(sizeof(char) * BUFFER_SIZE);
 	if (buffer == NULL)
 	{
