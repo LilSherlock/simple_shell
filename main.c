@@ -6,19 +6,18 @@
 
 
 /* add functionality to main args */
-int main(int ac, char *av[])
+int main(int ac, char *av[], char *env[])
 {
-	/* 
-	if(ac != 1)
+	int status = 0;
+	if(isatty(STDIN_FILENO) == 1)
 	{
-		exec();
+		status = interactive();
 	}
 	else
 	{
-		
-	} */
+		status = noninteractive(av, env);
+	}
 	
-	hshloop();
 
-	return (0);
+	return (status);
 }

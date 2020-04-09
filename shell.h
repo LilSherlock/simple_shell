@@ -11,7 +11,8 @@
 #define BUFFER_SIZE 1024
 
 char *readline(void);
-void hshloop(void);
+int interactive(void);
+int noninteractive(char *av[], char *env[]);
 char **tokenizer(char *buffer);
 char *_strtok(char *str, char *deli);
 char *_strchr(char *string, char b);

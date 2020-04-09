@@ -9,7 +9,7 @@ char *readline(void)
 		perror("Unable to allocate buffer");
 		exit(1);
 	}
-	bytes = getline(&buffer, &n, stdin);\
+	bytes = getline(&buffer, &n, stdin);
 	if (bytes == EOF)
 		return (NULL);
 	return(buffer);
