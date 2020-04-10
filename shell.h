@@ -9,11 +9,11 @@
 #include <sys/stat.h>
 #include <limits.h>
 #define BUFFER_SIZE 1024
-
-char *readline(void);
+#define TOKEN_SIZE 64
+int readline(char *buffer);
 int interactive(void);
 int noninteractive(char *av[], char *env[]);
-char **tokenizer(char *buffer);
+char ** tokenizer(char *buffer, const char *delim);
 char *_strtok(char *str, char *deli);
 char *_strchr(char *string, char b);
 unsigned int _strcspn(char *s, char *accept);
