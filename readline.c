@@ -1,17 +1,14 @@
 #include "shell.h"
-char *readline(void)
+int readline(char *buffer)
 {
-	char *buffer;
 	ssize_t bytes = 0;
 	size_t n = BUFFER_SIZE;
-	buffer = malloc(sizeof(char) * BUFFER_SIZE);
-	if (buffer == NULL)
-	{
-		perror("Unable to allocate buffer");
-		exit(1);
-	}
 	bytes = getline(&buffer, &n, stdin);
+
+	/* si apretan ctrl + d debe parar el ciclo del prompt*/
 	if (bytes == EOF)
-		return (NULL);
-	return(buffer);
+	{
+		return(-1);
+	}
+	return (0);
 }

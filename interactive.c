@@ -1,19 +1,37 @@
 #include "shell.h"
+/**
+ * interactive - 
+ * 
+ */
 int interactive(void)
 {
 	/* store variables to execute */
-	char *buffer, **arguments;
-	ssize_t error = 0;
+	char *buffer, **arguments = NULL;
+	const char *delim = " ";
+	ssize_t status = 0;
+	
 
-	while(error == 0)
+	while (status == 0)
 	{
-		buffer = readline();
-		arguments = tokenizer(buffer);
+		buffer = NULL;
+		/* el buffer que va a almacenar el string del usuario */
+		buffer = malloc(sizeof(char) * BUFFER_SIZE);
 		if (buffer == NULL)
-			error = -1;
-		free(arguments);
-	}
-	free(buffer);
-	return(error);
-}
+		{
+			perror("Unable to allocate buffer");
+			exit(1);
+		}
+		printf("$ ");
+		/* la funcion que captura la linea y la guarda en buffer */
+		status = readline(buffer);
+		/* argumentos es un arreglo de strings */
+		arguments = tokenizer(buffer, delim);
+		/* aqui se deberia comprobar que el comando ingresado exista */
 
+		
+		/* liberando todos los argumentos */
+		free(arguments);
+		free(buffer);
+	}
+	return (status);
+}
