@@ -1,25 +1,17 @@
 #include "shell.h"
 
-void _execve(char **command, char *args)
+int execve(char **argv, char *path)
 {
 	pid_t child;
+	int status = 0;
 
-	pid = fork();
-	if (pid == 0)
+	child = fork();
+	if (child == 0)
 	{
-		if (execve(args, command, NULL) == -1)
-		{
-			perror("ERROR");
-			exit(EXIT_FAILURE);
-		}
-		exit(EXIT_SUCCESS);
+		status = execve(path, argv, NULL);
+		exit(status);
 	}
-	else if (child == -1)
-	{
-		perror("CHILD PROCESS ERROR");
-	}
-	else 
-	{
-		wait(NULL);
-	}
+	else
+			wait(NULL);
+	return (status);
 }
