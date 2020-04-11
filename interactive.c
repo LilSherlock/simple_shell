@@ -27,7 +27,7 @@ int interactive(void)
 		/* argumentos es un arreglo de strings */
 		arguments = tokenizer(buffer, delim);
 		/* aqui se deberia comprobar que el comando ingresado exista */
-
+		
 		
 		/* liberando todos los argumentos */
 		free(arguments);

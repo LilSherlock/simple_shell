@@ -17,5 +17,7 @@ char ** tokenizer(char *buffer, const char *delim);
 char *_strtok(char *str, char *deli);
 char *_strchr(char *string, char b);
 unsigned int _strcspn(char *s, char *accept);
+char *_strdup(char *str);
+char *create_array(unsigned int size, char c);
 
 #endif /* SHELL_H_ */
