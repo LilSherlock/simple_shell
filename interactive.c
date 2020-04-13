@@ -9,7 +9,7 @@ int interactive(void)
 	char *buffer, **arguments = NULL;
 	const char *delim = " ";
 	ssize_t status = 0;
-	
+	int i;
 
 	while (status == 0)
 	{
@@ -24,12 +24,24 @@ int interactive(void)
 		printf("$ ");
 		/* la funcion que captura la linea y la guarda en buffer */
 		status = readline(buffer);
+		if (status == -1)
+		{
+			break;
+		}
+		buffer = strtok(buffer, "\n");
 		/* argumentos es un arreglo de strings */
 		arguments = tokenizer(buffer, delim);
+		if()
 		/* aqui se deberia comprobar que el comando ingresado exista */
-		
+		status = _execve(arguments, arguments[0]);
 		
 		/* liberando todos los argumentos */
+		i = 0;
+		while (arguments[i] != NULL)
+		{
+			free(arguments[i]);
+			i++;
+		}
 		free(arguments);
 		free(buffer);
 	}

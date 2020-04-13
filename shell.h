@@ -12,6 +12,7 @@
 #define BUFFER_SIZE 1024
 #define TOKEN_SIZE 64
 /*   -----------------     */
+int _execve(char **argv, char *path);
 int readline(char *buffer);
 int interactive(void);
 int noninteractive(char *av[], char *env[]);

@@ -1,6 +1,6 @@
 #include "shell.h"
 
-int execve(char **argv, char *path)
+int _execve(char **argv, char *path)
 {
 	pid_t child;
 	int status = 0;
@@ -12,6 +12,7 @@ int execve(char **argv, char *path)
 		exit(status);
 	}
 	else
-			wait(NULL);
+		wait(NULL);
+
 	return (status);
 }
