@@ -2,20 +2,22 @@
 
 char *_getenv(const char *name, char **env)
 {
-	int x = 0, y = 0, length = 0, tag = 0;
+	int i = 0, j = 0;
 
-	while(env[x] != NULL)
+	if (name == NULL || env == NULL || *env == NULL)
+		return (NULL);
+	while (env[i] != NULL)
 	{
-		tag = _strcmp(name, (const char * )env[i]);
-		if (tag == 1)
+		while (env[i][j] == name[j])
+			j++;
+		if (env[i][j] == '=')
 		{
-			length = _stlren(env[i]);
-			while (env[x][y] != '=')
-			y += 1;
-			length -= j;
-			return (env[i] + j + 1);
+			j++;
+			return (&(env[i][j]));
 		}
-		x++;
+		i++;
+		j = 0;
 	}
+	write(STDOUT_FILENO, "ERROR", 5);
 	return (NULL);
 }

@@ -1,4 +1,27 @@
 #include "shell.h"
+
+char *_strdup(char *str)
+{
+	char *my_array;
+	int i, len;
+
+	my_array = malloc(sizeof(str));
+	i = len = 0;
+	while (str[i] != '\0')
+	{
+		len++;
+		i++;
+	}
+	if (my_array == NULL)
+		return (NULL);
+	i = 0;
+	while (str[i] != '\0')
+	{
+		my_array[i] = str[i];
+		i++;
+	}
+	return (my_array);
+}
 /**
  * tokenizer - takes a string and splits it into different strings and return the array of strings
  * 
@@ -29,3 +52,4 @@ char **tokenizer(char *buffer, const char *delim)
 	free(clone);
 	return (tokens);
 }
+
