@@ -1,0 +1,23 @@
+.\" Manpage for Simple Shell.
+.TH "Simple Shell" 1 " 15 april 2020" "Simple shell man page"
+
+.SH NAMES
+hsh - Santiago Castillo - Takeshi Camilo 
+
+.SH DESCRIPTION
+Welcome to the Simple Shell project! This program is a simple shell that can be compiled and launched from the command line within any number of Linux versions. It contains the most basic features and functions found in the various shell programs.
+
+.SH RETURN VALUE
+The shell returns the error code given by the last completed command followed by either ctrl-d or exit with no status code.
+
+.SH BUGS
+No known bugs
+
+.SH AUTHORS
+Santiago Castillo
+    ???
+    https://github.com/Sainterman
+
+Takeshi Camilo
+    potatogames15@gmail.com
+    https://github.com/LilSherlock
