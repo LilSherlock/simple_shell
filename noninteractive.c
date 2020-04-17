@@ -1,6 +1,8 @@
-
+#include "shell.h"
 /* sin implementar aun */
-int noninteractive(__attribute__((unused))char *av[], __attribute__((unused)) char *env[])
+int noninteractive(char *av[])
 {
-	return (0);
+	int status;
+	status = _execve(av, av[1]);
+	return (status);
 }

@@ -7,11 +7,11 @@
  * @env: env
  * Return: (status);
 */
-int main(__attribute__((unused)) int ac, char *av[], char *env[])
+int main(int ac, char *av[])
 {
 	int status = 0;
 
-	if (isatty(STDIN_FILENO) == 1)
+	if (ac == 1)
 	{
 		/* entrando al modo interactivo, retorna estado del programa */
 		status = interactive();
@@ -19,7 +19,7 @@ int main(__attribute__((unused)) int ac, char *av[], char *env[])
 	else
 	{
 		/* entrando al modo no interactivo */
-		status = noninteractive(av, env);
+		status = noninteractive(av);
 	}
 	return (status);
 }

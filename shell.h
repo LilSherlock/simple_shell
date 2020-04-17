@@ -14,18 +14,21 @@
 #define BUFFER_SIZE 1024
 #define TOKEN_SIZE 64
 /*   -----------------     */
+extern char **environ;
+char *path(char *command);
 int _execve(char **argv, char *path);
 int readline(char *buffer);
 int interactive(void);
-int noninteractive(char *av[], char *env[]);
+int noninteractive(char *av[]);
 char **tokenizer(char *buffer, const char *delim);
 char *_strtok(char *str, char *deli);
 char *_strchr(char *string, char b);
-int _strcmp(const char *s1, const char *s2);
+int _strcmp(char *s1, char *s2);
 int _stlren(char *string);
 unsigned int _strcspn(char *s, char *accept);
 char *_strdup(char *str);
 char *create_array(unsigned int size, char c);
+char *_getenv(const char *name, char **env);
 /*   -----------------     */
 
 #endif /* SHELL_H_ */

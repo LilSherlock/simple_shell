@@ -31,8 +31,11 @@ int interactive(void)
 		buffer = strtok(buffer, "\n");
 		/* argumentos es un arreglo de strings */
 		arguments = tokenizer(buffer, delim);
-		if ()
 		/* aqui se deberia comprobar que el comando ingresado exista */
+		if(path(arguments[0]) == NULL)
+		{
+			/* SAY COMMAND NOT FOUND */
+		}
 		status = _execve(arguments, arguments[0]);
 		i = 0;
 		while (arguments[i] != NULL)
