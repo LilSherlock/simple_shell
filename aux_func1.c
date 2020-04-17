@@ -1,21 +1,41 @@
 #include "shell.h"
+#include "holberton.h"
 
-int _strcmp(const char *s1, const char *s2) 
+/**
+ * _strcmp - compares two strings
+ * @s1: string one to compare
+ * @s2: string two to compare
+ * Return: an integer less than 0 if s1 is found
+ */
+
+int _strcmp(char *s1, char *s2)
 {
-   while (*s1 != '\0' && *s2 != '\0'  && *s1 == *s2) 
-   {
-	  s1++;
-	  s2++;
-   }
-   return *s1 - *s2;
-}
+	int i;
 
+	i = 0;
+	while (s1[i] != '\0')
+	{
+		if (s1[i] >  s2[i])
+			return (s1[i] - s2[i]);
+		if (s1[i] < s2[i])
+			return (s1[i] - s2[i]);
+		i++;
+	}
+	return (0);
+}
+/**
+ * _stlren - function strlen
+ * @string: string
+ * Return: always x
+ */
 int _stlren(char *string)
 {
 	int x = 0;
 
-	while(string[x])
-			x++;
+	while (string[x])
+	{
+		x++;
+	}
 
 	return (x);
 }

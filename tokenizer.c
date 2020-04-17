@@ -1,5 +1,9 @@
 #include "shell.h"
-
+/**
+ * _strdup - strdup function
+ * @str: char pointer
+ * Return: always my array
+ */
 char *_strdup(char *str)
 {
 	char *my_array;
@@ -23,33 +27,29 @@ char *_strdup(char *str)
 	return (my_array);
 }
 /**
- * tokenizer - takes a string and splits it into different strings and return the array of strings
- * 
- * 
+ * tokenizer - takes a string and splits it into different strings
+ * @buffer: buffer
+ * @delim: character
+ * Return: always tokens
  */
 char **tokenizer(char *buffer, const char *delim)
 {
 	char **tokens, *clone = NULL;
 	size_t words = 0;
 
-	/* guardando en el heap el espacio para las palabras */
 	tokens = malloc(sizeof(char *) * TOKEN_SIZE);
 	if (!tokens)
 	{
 		perror("Unable to allocate buffer");
 		exit(1);
 	}
-	/* clone guarda cada palabra obtenida de strtok */
 	clone = strtok(buffer, delim);
 	for (; clone != NULL; clone = strtok(NULL, delim))
 	{
-		/* cada posicion de tokens se llena con el clon */
 		tokens[words] = _strdup(clone);
 		words++;
 	}
-	/* ULTIMA POSICION DEL ARREGLO EN NULL */
 	tokens[words] = clone;
 	free(clone);
 	return (tokens);
 }
-

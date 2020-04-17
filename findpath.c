@@ -1,5 +1,10 @@
 #include "shell.h"
-
+/**
+ * pathCat - path function
+ * @dir: direction
+ * @av: characters
+ * Return: always buf
+ */
 char *pathCat(char *dir, char *av)
 {
 	int i = 0, k = 0, length = 0, length2 = 0;

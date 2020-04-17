@@ -1,5 +1,10 @@
 #include "shell.h"
-
+/**
+ * _execve - executable function
+ * @argv: argumments
+ * @path: directory
+ * Return: always status
+ */
 int _execve(char **argv, char *path)
 {
 	pid_t child;

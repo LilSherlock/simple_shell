@@ -1,6 +1,6 @@
 #ifndef SHELL_H_
 #define SHELL_H_
-/*   -----------------     */
+/*   ----------------- */
 #include <stdio.h>
 #include <unistd.h>
 #include <sys/types.h>
@@ -18,14 +18,11 @@
 int main(int argc, char **argv);
 void shell_loop(void);
 char *_readline(void);
-char **_tokenizer(char *buffer, const char *delim);
-char **lsh_split_line(char *line);
 int lsh_cd(char **args);
 int lsh_exit(char **args);
-int lsh_num_builtins();
+int lsh_num_builtins(void);
 int lsh_execute(char **args);
-
-/*   -----------------     */
-
-/* -----------------     */
+char **_tokenizer(char *buffer, const char *delim);
+char **lsh_split_line(char *line);
+/*   -----------------  */
 #endif /* SHELL_H_ */

@@ -1,5 +1,10 @@
 #include "shell.h"
-
+/**
+ * _tokenizer - this function tokenizer the arguments
+ * @delim: characters
+ * @buffer: buffer
+ * Return: Always tokens
+ */
 char **_tokenizer(char *buffer, const char *delim)
 {
 	char **tokens, *clone = NULL;
@@ -25,35 +30,42 @@ char **_tokenizer(char *buffer, const char *delim)
 	free(clone);
 	return (tokens);
 }
-/*                */
+/**
+ * lsh_split_line - divide line
+ * @line: command line
+ * Return: always tokens
+ */
 char **lsh_split_line(char *line)
 {
-  int bufsize = BUFFER_SIZE, position = 0;
-  char **tokens = malloc(bufsize * sizeof(char*));
-  char *token;
+	char *token;
+	int bufsize = BUFFER_SIZE, position = 0;
+	char **tokens = malloc(bufsize * sizeof(char *));
 
-  if (!tokens) {
-    fprintf(stderr, "lsh: allocation error\n");
-    exit(EXIT_FAILURE);
-  }
+	if (!tokens)
+	{
+		fprintf(stderr, "lsh: allocation error\n");
+		exit(EXIT_FAILURE);
+	}
 
-  token = strtok(line, DELIM);
-  while (token != NULL) {
-    tokens[position] = token;
-    position++;
+	token = strtok(line, DELIM);
+	while (token != NULL)
+	{
+		tokens[position] = token;
+		position++;
 
-    if (position >= bufsize) {
-      bufsize += BUFFER_SIZE
-;
-      tokens = realloc(tokens, bufsize * sizeof(char*));
-      if (!tokens) {
-        fprintf(stderr, "lsh: allocation error\n");
-        exit(EXIT_FAILURE);
-      }
-    }
+		if (position >= bufsize)
+		{
+			bufsize += BUFFER_SIZE;
+			tokens = realloc(tokens, bufsize * sizeof(char *));
+			if (!tokens)
+			{
+				fprintf(stderr, "lsh: allocation error\n");
+				exit(EXIT_FAILURE);
+			}
+		}
 
-    token = strtok(NULL, DELIM);
-  }
-  tokens[position] = NULL;
-  return tokens;
+		token = strtok(NULL, DELIM);
+	}
+	tokens[position] = NULL;
+	return (tokens);
 }

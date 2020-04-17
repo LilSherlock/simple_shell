@@ -1,7 +1,7 @@
 #include "shell.h"
 /**
- * interactive - 
- * 
+ * interactive - interactive function
+ * Return: status
  */
 int interactive(void)
 {
@@ -31,11 +31,9 @@ int interactive(void)
 		buffer = strtok(buffer, "\n");
 		/* argumentos es un arreglo de strings */
 		arguments = tokenizer(buffer, delim);
-		if()
+		if ()
 		/* aqui se deberia comprobar que el comando ingresado exista */
 		status = _execve(arguments, arguments[0]);
-		
-		/* liberando todos los argumentos */
 		i = 0;
 		while (arguments[i] != NULL)
 		{

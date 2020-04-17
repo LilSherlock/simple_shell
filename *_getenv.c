@@ -1,5 +1,10 @@
 #include "shell.h"
-
+/**
+ * _getenv - function getenv
+ * @name: char
+ * @env: env
+ * Return: Always null
+ */
 char *_getenv(const char *name, char **env)
 {
 	int i = 0, j = 0;

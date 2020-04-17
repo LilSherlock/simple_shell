@@ -18,7 +18,7 @@ int _execve(char **argv, char *path);
 int readline(char *buffer);
 int interactive(void);
 int noninteractive(char *av[], char *env[]);
-char ** tokenizer(char *buffer, const char *delim);
+char **tokenizer(char *buffer, const char *delim);
 char *_strtok(char *str, char *deli);
 char *_strchr(char *string, char b);
 int _strcmp(const char *s1, const char *s2);

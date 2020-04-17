@@ -1,19 +1,21 @@
 #include "shell.h"
-/** COMENTARIOOOOOOOOS */
-
+/**
+ * _readline - this function is to readline
+ * Return: if fails return buffer
+ */
 char *_readline(void)
 {
 	int bufsize = BUFFER_SIZE;
 	int position = 0;
 	int i = 0;
-
 	char *buffer = malloc(sizeof(char) * bufsize);
+
 	if (!buffer)
 	{
 		fprintf(stderr, "allocation error\n");
 		exit(EXIT_FAILURE);
 	}
-	while(1)
+	while (1)
 	{
 		/* Lee el caracter */
 		i = getchar();
@@ -21,7 +23,7 @@ char *_readline(void)
 		if (i == EOF || i == '\n')
 		{
 			buffer[position] = '\n';
-			return buffer;
+			return (buffer);
 		}
 		else
 		{
